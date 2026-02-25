@@ -8,6 +8,14 @@ import { BlueprintLogo } from "@/assets/logos/BlueprintLogo";
 import "@/styles/global.css";
 import styles from "./styles.module.css";
 
+const Comment = () => {
+  return (
+    <div className={styles.comment}>
+      I recently volunteered at my local Boys and Girls Club!
+    </div>
+  );
+};
+
 export default function Home() {
   return (
     <main className={styles.main}>
@@ -76,9 +84,7 @@ export default function Home() {
               <div className={styles.location}>Oakland, CA</div>
             </div>
           </div>
-          <div className={styles.caption}>
-            I recently volunteered at my local Boys and Girls Club!
-          </div>
+          <Comment />
         </div>
       </div>
     </main>
