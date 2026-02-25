@@ -49,9 +49,140 @@
 }
 
 .blueprint {
-  color: #0078e8;
+  color: #348cdf;
 }
 
 .contentScroll {
   margin-top: 3.125rem;
+}
+
+.postHeader {
+  display: flex;
+  gap: 0px;
+  align-items: center;
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 999px;
+  background: #d9d9d9;
+  display: flex;
+  justify-content: flex-start;
+  margin: 0 16px;
+}
+
+.userBlock {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 15px;
+}
+
+.userLine {
+  font-family: "Poppins", sans-serif;
+  font-size: 13px;
+  line-height: 18px;
+  letter-spacing: -0.07px;
+  color: #262626;
+}
+
+.username,
+.org {
+  font-weight: 700;
+}
+
+.at {
+  font-weight: 400;
+}
+
+.location {
+  font-family: "Poppins", sans-serif;
+  font-size: 13px;
+  line-height: 18px;
+  letter-spacing: -0.07px;
+  color: #8e8e8e;
+}
+
+.imageWrap {
+  margin-top: 12px;
+  padding: 0 16px;
+}
+
+.postImage {
+  width: 100%;
+  display: block;
+  border-radius: 12px;
+}
+
+.caption {
+  display: flex;
+  width: 365px;
+  height: 145px;
+  justify-content: center;
+  margin-top: 15px;
+  padding: 0 16px;
+  color: #262626;
+  font-family: Poppins;
+  font-size: 11px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 18px; /* 138.462% */
+}
+
+.actions {
+  color: #000;
+  line-height: 18px; /* 180% */
+  display: flex;
+  gap: 12px;
+  margin-top: 10px;
+  padding: 0 16px;
+}
+
+.likes {
+  font-family: Poppins;
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 400;
+}
+
+.comments {
+  font-family: Poppins;
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 400;
+}
+
+.icons {
+  display: flex;
+  margin: 12px 0;
+}
+
+.heartIcon {
+  margin: 0 16px;
+}
+
+.commentIcon {
+  margin: 0;
+}
+
+.shareIcon {
+  margin-left: auto;
+  margin-right: 16px;
+}
+
+.datePosted {
+  display: flex;
+  width: 76px;
+  height: 8px;
+  flex-direction: column;
+  justify-content: center;
+  color: #979797;
+  font-family: Poppins;
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 0.05px;
+  margin: 0 16px;
 }
