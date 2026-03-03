@@ -6,6 +6,7 @@ import { LuCircle as ProfileIcon } from "react-icons/lu";
 import { TbMessageCircle } from "react-icons/tb";
 import { BlueprintLogo } from "@/assets/logos/BlueprintLogo";
 import "@/styles/global.css";
+import Image from "next/image";
 import styles from "./styles.module.css";
 
 const Comment = () => {
@@ -44,10 +45,12 @@ export default function Home() {
           </div>
 
           <div className={styles.imageWrap}>
-            <img
+            <Image
               src="https://cdn.britannica.com/51/178051-050-3B786A55/San-Francisco.jpg"
+              alt="San Francisco skyline"
+              width={300}
+              height={250}
               className={styles.postImage}
-              alt=""
             />
           </div>
 
