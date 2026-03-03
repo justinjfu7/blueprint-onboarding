@@ -2,20 +2,12 @@
 
 import { FiHeart as HeartIcon } from "react-icons/fi";
 import { GoPaperAirplane as ShareIcon } from "react-icons/go";
-import { LuCircle as ProfileIcon } from "react-icons/lu";
 import { TbMessageCircle } from "react-icons/tb";
 import { BlueprintLogo } from "@/assets/logos/BlueprintLogo";
 import "@/styles/global.css";
 import Image from "next/image";
+import Comment from "./components/Comment";
 import styles from "./styles.module.css";
-
-const Comment = () => {
-  return (
-    <div className={styles.comment}>
-      I recently volunteered at my local Boys and Girls Club!
-    </div>
-  );
-};
 
 export default function Home() {
   return (
