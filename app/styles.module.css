@@ -200,3 +200,10 @@
   letter-spacing: 0.003125rem;
   margin: 0 1rem;
 }
+
+.divider {
+  border: none;
+  height: 0.0625rem;
+  background-color: #ededed;
+  margin: 0.75rem 0;
+}

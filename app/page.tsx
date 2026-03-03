@@ -67,6 +67,9 @@ export default function Home() {
           <div className={styles.datePosted}>
             <p>February 1</p>
           </div>
+
+          <hr className={styles.divider} />
+
           <div className={styles.postHeader}>
             <div className={styles.avatar} />
 
