@@ -31,7 +31,7 @@ export default function Home() {
 
         <div className={styles.contentScroll}>
           <div className={styles.postHeader}>
-            <ProfileIcon className={styles.avatar} size={24} />
+            <div className={styles.avatar}/>
 
             <div className={styles.userBlock}>
               <div className={styles.userLine}>
@@ -73,7 +73,7 @@ export default function Home() {
             <p>February 1</p>
           </div>
           <div className={styles.postHeader}>
-            <ProfileIcon className={styles.avatar} size={24} />
+            <div className={styles.avatar}/>
 
             <div className={styles.userBlock}>
               <div className={styles.userLine}>
