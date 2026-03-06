@@ -1,14 +1,82 @@
 "use client";
 
-import { FiHeart as HeartIcon } from "react-icons/fi";
-import { GoPaperAirplane as ShareIcon } from "react-icons/go";
-import { LuCircle as ProfileIcon } from "react-icons/lu";
-import { TbMessageCircle } from "react-icons/tb";
 import { BlueprintLogo } from "@/assets/logos/BlueprintLogo";
 import "@/styles/global.css";
+import { useEffect, useState } from "react";
+import Post, { PostProps } from "@/components/Post";
+import { supabase } from "@/supabase/client";
 import styles from "./styles.module.css";
 
+type CommentDB = {
+  id: number;
+  post_id: number;
+  user_name: string;
+  comment_text: string;
+  num_likes: number;
+  created_at: string;
+};
+
+type PostRow = {
+  id: number;
+  user_name: string;
+  npo_name: string;
+  post_text: string;
+  image_link: string;
+  num_likes: number;
+  Locations: { city_name: string; state_abbr: string }[];
+};
+
 export default function Home() {
+  const [postData, setPostData] = useState<PostProps[] | null>(null);
+
+  async function fetchPostData(commentData: CommentDB[]): Promise<PostProps[]> {
+    const { data, error } = await supabase.from("Posts").select(`
+      id,
+      user_name,
+      npo_name,
+      post_text,
+      image_link,
+      num_likes,
+      Locations (
+        city_name,
+        state_abbr
+      )
+    `);
+
+    const rows = (data ?? []) as unknown as PostRow[];
+
+    return rows.map(row => {
+      const loc = row.Locations?.[0];
+
+      return {
+        id: row.id,
+        username: row.user_name,
+        npo: row.npo_name,
+        city: loc?.city_name ?? "",
+        state: loc?.state_abbr ?? "",
+        text: row.post_text,
+        image: row.image_link,
+        likeCount: row.num_likes,
+        comments: commentData.filter(c => c.post_id === row.id),
+      };
+    });
+  }
+
+  useEffect(() => {
+    async function loadPosts() {
+      const { data: commentData, error: commentError } = await supabase
+        .from("Comments")
+        .select("id, post_id, user_name, comment_text, num_likes, created_at");
+
+      if (commentError) throw commentError;
+
+      const fetchedPost = await fetchPostData(commentData ?? []);
+      setPostData(fetchedPost);
+    }
+
+    loadPosts();
+  }, []);
+
   return (
     <main className={styles.main}>
       <div className={styles.content}>
@@ -22,37 +90,11 @@ export default function Home() {
         </div>
 
         <div className={styles.contentScroll}>
-          <ProfileIcon size={24} />
-          <p>etam3 at Mission Bit</p>
-          <p>San Francisco, CA</p>
-
-          <p>
-            Image Link:
-            https://cdn.britannica.com/51/178051-050-3B786A55/San-Francisco.jpg
-          </p>
-
-          <p>
-            This past weekend, I taught at Mission Bit. I was working with a
-            group of high school students who were building their first web
-            pages. I really enjoyed being able to help guide 10 students on
-            learning CS fundamentals through a project! They were all really
-            eager to learn, and I&#39;m glad I signed up. Highly recommend to
-            any other software engineers interested in volunteering! Sign-up
-            here: https://missionbit.org/get-involved/volunteer-with-us/
-          </p>
-
-          <p>3 Likes</p>
-          <p>View 2 Comments</p>
-          <HeartIcon size={24} />
-          <TbMessageCircle size={24} />
-          <ShareIcon size={24} />
-
-          <p>February 1</p>
-
-          <ProfileIcon size={24} />
-          <p>carolyn123 at Boys and Girls Club</p>
-          <p>Oakland, CA</p>
-          <p>I recently volunteered at my local Boys and Girls Club!</p>
+          {postData === null ? (
+            <p>Loading...</p>
+          ) : (
+            postData.map(post => <Post key={post.id} {...post} />)
+          )}
         </div>
       </div>
     </main>

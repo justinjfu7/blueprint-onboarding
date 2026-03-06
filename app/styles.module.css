@@ -49,9 +49,207 @@
 }
 
 .blueprint {
-  color: #0078e8;
+  color: #348cdf;
 }
 
 .contentScroll {
   margin-top: 3.125rem;
+}
+
+.postHeader {
+  display: flex;
+  gap: 0rem;
+  align-items: center;
+}
+
+.avatar {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 62.4375rem;
+  background: #d9d9d9;
+  display: flex;
+  justify-content: flex-start;
+  margin: 0 1rem;
+}
+
+.userBlock {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 0.9375rem;
+}
+
+.userLine {
+  font-family: "Poppins", sans-serif;
+  font-size: 0.8125rem;
+  line-height: 1.125rem;
+  letter-spacing: -0.004375rem;
+  color: #262626;
+}
+
+.username,
+.org {
+  font-weight: 700;
+}
+
+.at {
+  font-weight: 400;
+}
+
+.location {
+  font-family: "Poppins", sans-serif;
+  font-size: 0.8125rem;
+  line-height: 1.125rem;
+  letter-spacing: -0.004375rem;
+  color: #8e8e8e;
+}
+
+.imageWrap {
+  margin-top: 0.75rem;
+  padding: 0 1rem;
+}
+
+.postImage {
+  width: 100%;
+  display: block;
+  border-radius: 0.75rem;
+}
+
+.caption {
+  display: flex;
+  width: auto;
+  height: auto;
+  justify-content: flex-start;
+  margin-top: 0.9375rem;
+  padding: 0 1rem;
+  color: #262626;
+  font-family: Poppins;
+  font-size: 0.6875rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.125rem;
+}
+
+.comment {
+  display: flex;
+  width: 22.8125rem;
+  height: 3.125rem;
+  justify-content: flex-start;
+  padding: 0 1rem;
+  color: #262626;
+  font-family: Poppins;
+  font-size: 0.6875rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.125rem;
+}
+
+.actions {
+  color: #000;
+  line-height: 1.125rem;
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 0.625rem;
+  padding: 0 1rem;
+}
+
+.likes {
+  font-family: Poppins;
+  font-size: 0.625rem;
+  font-style: normal;
+  font-weight: 400;
+}
+
+.comments {
+  font-family: Poppins;
+  font-size: 0.625rem;
+  font-style: normal;
+  font-weight: 400;
+}
+
+.icons {
+  display: flex;
+  margin: 0.75rem 0;
+}
+
+.heartIcon {
+  margin: 0 1rem;
+}
+
+.commentIcon {
+  margin: 0;
+}
+
+.shareIcon {
+  margin-left: auto;
+  margin-right: 1rem;
+}
+
+.datePosted {
+  display: flex;
+  width: 4.75rem;
+  height: 0.5rem;
+  flex-direction: column;
+  justify-content: center;
+  color: #979797;
+  font-family: Poppins;
+  font-size: 0.625rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 0.003125rem;
+  margin: 0 1rem;
+}
+
+.divider {
+  border: none;
+  height: 0.0625rem;
+  background-color: #ededed;
+  margin: 0.75rem 0;
+}
+
+/* Comment styles */
+
+.commentsSection {
+  border-top: 0.0625rem solid #e6e6e6;
+  margin-top: 0.75rem;
+  padding-top: 0.75rem;
+  padding: 0 1rem;
+  font-size: 0.6875rem;
+}
+
+.commentRow {
+  display: flex;
+  gap: 0.75rem;
+  padding: 0.625rem 0;
+  align-items: flex-start;
+}
+
+.commentAvatar {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  background: #d9d9d9;
+  flex-shrink: 0;
+}
+
+.commentBody {
+  flex: 1;
+}
+
+.commentUser {
+  font-weight: 700;
+}
+
+.commentLikes {
+  font-size: 0.75rem;
+  color: #8e8e8e;
+  margin-top: 0.25rem;
+}
+
+.commentHeart {
+  font-size: 1.125rem;
+  line-height: 2rem;
+  padding-left: 0.375rem;
+  color: #262626;
 }
